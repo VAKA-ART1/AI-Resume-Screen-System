@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Resume Analysis</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f4f6fb;
+}
+
+.card{
+    border-radius:15px;
+}
+
+.skill{
+    margin:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+<div class="card shadow p-5">
+
+<h2 class="text-center mb-4">
+
+🤖 AI Resume Analysis
+
+</h2>
+
+<!-- ATS Score -->
+
+<h4>ATS Score</h4>
+
+<div class="progress mb-4" style="height:30px;">
+
+<div
+class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+style="width:{{ ats_score }}%;">
+
+{{ ats_score }}%
+
+</div>
+
+</div>
+
+<!-- Skills -->
+
+<h4>Detected Skills</h4>
+
+{% if skills %}
+
+<div class="mb-4">
+
+{% for skill in skills %}
+
+<span class="badge bg-primary skill">
+
+{{ skill }}
+
+</span>
+
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<div class="alert alert-danger">
+
+No Skills Detected
+
+</div>
+
+{% endif %}
+
+<hr>
+
+<h3 class="mt-4">
+
+🎯 Top Recommended Jobs
+
+</h3>
+
+{% for job in jobs %}
+
+<div class="card shadow-sm p-3 mt-3">
+
+<div class="d-flex justify-content-between">
+
+<div>
+
+<h5>
+
+{{ job.title }}
+
+</h5>
+
+<p class="text-muted">
+
+{{ job.company }}
+
+</p>
+
+<p>
+
+📍 {{ job.location }}
+
+</p>
+
+<p>
+
+💰 {{ job.salary }}
+
+</p>
+
+</div>
+
+<div style="width:220px;">
+
+<h6>
+
+Match Score
+
+</h6>
+
+<div class="progress">
+
+<div
+class="progress-bar bg-success"
+style="width:{{ job.match }}%;">
+
+{{ job.match }}%
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-3">
+
+{% for skill in job.skills %}
+
+<span class="badge bg-secondary">
+
+{{ skill }}
+
+</span>
+
+{% endfor %}
+
+</div>
+
+<a
+href="/jobs"
+class="btn btn-success mt-3">
+
+Apply Now
+
+</a>
+
+</div>
+
+{% endfor %}
+
+<div class="text-center mt-5">
+
+<a href="/dashboard"
+class="btn btn-dark">
+
+⬅ Back to Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Candidate Profile</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        body {
+            background: #f4f7fc;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Main container */
+
+        .main-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Profile Card */
+
+        .profile-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            position: sticky;
+            top: 20px;
+        }
+
+        /* Google Avatar */
+
+       .profile-avatar {
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          margin: 0 auto 20px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          background: #0d6efd;
+          color: white;
+
+          font-size: 65px;
+          font-weight: bold;
+
+          overflow: hidden;
+
+          border: 4px solid #0d6efd;
+        }
+
+       .profile-avatar img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+      }
+
+        .profile-name {
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .profile-email {
+            color: #666;
+            word-break: break-word;
+        }
+
+        /* Info boxes */
+
+        .info-box {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .info-item strong {
+            color: #111827;
+        }
+
+        /* Skills */
+
+        .skill {
+            display: inline-block;
+            margin: 4px;
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        /* Statistics */
+
+        .stat-card {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Buttons */
+
+        .btn-custom {
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        /* Table */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 991px) {
+
+            .profile-card {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="main-container">
+
+    <div class="row g-4">
+
+
+        <!-- ================================= -->
+        <!-- LEFT PROFILE SECTION -->
+        <!-- ================================= -->
+
+        <div class="col-lg-4">
+
+            <div class="profile-card">
+
+                <!-- Google Profile Avatar -->
+
+                <div class="profile-avatar">
+
+                    {% if user.picture %}
+
+                        <img
+                            src="{{ user.picture }}"
+                            alt="Profile ">
+
+                    {% else %}
+
+                        <span>
+                            {{ (user.fullname or user.email)[0]|upper }}
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Name -->
+
+                <h3 class="profile-name">
+
+                    {{ user.fullname }}
+
+                </h3>
+
+
+                <!-- Email -->
+
+                <p class="profile-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    {{ user.email }}
+
+                </p>
+
+
+                <!-- Candidate Badge -->
+
+                <span class="badge bg-success">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Candidate
+
+                </span>
+
+
+                <hr>
+
+
+                <!-- Profile Completion -->
+
+                <div class="text-start">
+
+                    <div class="d-flex justify-content-between">
+
+                        <strong>
+                            Profile Completion
+                        </strong>
+
+                        <strong>
+                            80%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress mt-2"
+                         style="height:10px;">
+
+                        <div
+                            class="progress-bar bg-success"
+                            style="width:80%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="d-grid gap-2 mt-4">
+
+
+                    <a
+                        href="/edit-profile"
+                        class="btn btn-warning btn-custom">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Profile
+
+                    </a>
+
+
+                    <a
+                        href="/dashboard"
+                        class="btn btn-secondary btn-custom">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Back Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- RIGHT CONTENT SECTION -->
+        <!-- ================================= -->
+
+        <div class="col-lg-8">
+
+
+            <!-- Personal Details -->
+
+            <div class="info-box">
+
+                <h4 class="info-title">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Personal Details
+
+                </h4>
+
+                <hr>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        <i class="fa-solid fa-phone"></i>
+                        Phone:
+                    </strong>
+
+                    {{ user.phone or "Not Added" }}
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        <i class="fa-solid fa-building-columns"></i>
+                        College:
+                    </strong>
+
+                    {{ user.college or "Not Added" }}
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Degree:
+                    </strong>
+
+                    {{ user.degree or "Not Added" }}
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        <i class="fa-solid fa-star"></i>
+                        CGPA:
+                    </strong>
+
+                    {{ user.cgpa or "Not Added" }}
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        <i class="fa-solid fa-briefcase"></i>
+                        Experience:
+                    </strong>
+
+                    {{ user.experience or "Fresher" }}
+
+                </div>
+
+
+                <!-- Resume -->
+
+                <div class="info-item">
+
+                    <strong>
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        Resume:
+
+                    </strong>
+
+
+                    {% if user.resume %}
+
+                        <a
+                            href="{{ url_for('uploaded_file', filename=user.resume) }}"
+                            target="_blank"
+                            class="ms-2">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            {{ user.resume }}
+
+                        </a>
+
+                    {% else %}
+
+                        <span class="text-muted">
+
+                            No Resume Uploaded
+
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- SKILLS -->
+            <!-- ================================= -->
+
+            <div class="info-box">
+
+                <h4 class="info-title">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    Skills
+
+                </h4>
+
+                <hr>
+
+
+                {% if user.skills %}
+
+                    {% for skill in user.skills.split(",") %}
+
+                        <span
+                            class="badge bg-primary skill">
+
+                            {{ skill.strip() }}
+
+                        </span>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <p class="text-muted">
+
+                        No Skills Added
+
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- STATISTICS -->
+            <!-- ================================= -->
+
+            <div class="row g-3 mb-4">
+
+
+                <!-- Applied -->
+
+                <div class="col-md-4">
+
+                    <div class="stat-card">
+
+                        <div class="stat-number">
+
+                            {{ applied_jobs }}
+
+                        </div>
+
+                        <div class="stat-label">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                            Applied Jobs
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ATS -->
+
+                <div class="col-md-4">
+
+                    <div class="stat-card">
+
+                        <div
+                            class="stat-number
+                            {% if ats_score >= 80 %}
+                                text-success
+                            {% elif ats_score > 0 %}
+                                text-danger
+                            {% else %}
+                                text-secondary
+                            {% endif %}">
+
+                            {{ ats_score }}%
+
+                        </div>
+
+                        <div class="stat-label">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            ATS Score
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Shortlisted -->
+
+                <div class="col-md-4">
+
+                    <div class="stat-card">
+
+                        <div class="stat-number">
+
+                            {{ shortlisted }}
+
+                        </div>
+
+                        <div class="stat-label">
+
+                            <i class="fa-solid fa-check-circle"></i>
+
+                            Shortlisted
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- RECENT APPLICATIONS -->
+            <!-- ================================= -->
+
+            <div class="info-box">
+
+                <h4 class="info-title">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Recent Applications
+
+                </h4>
+
+                <hr>
+
+
+                <div class="table-container">
+
+                    <table
+                        class="table table-hover align-middle">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Company</th>
+
+                                <th>Job Title</th>
+
+                                <th>Status</th>
+
+                                <th>Date</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                        {% if applications %}
+
+
+                            {% for app in applications %}
+
+                            <tr>
+
+                                <td>
+
+                                    {{ app.company }}
+
+                                </td>
+
+
+                                <td>
+
+                                    {{ app.job_title }}
+
+                                </td>
+
+
+                                <td>
+
+                                    {% if app.status == "Shortlisted" %}
+
+                                        <span
+                                            class="badge bg-success">
+
+                                            Shortlisted
+
+                                        </span>
+
+                                    {% elif app.status == "Rejected" %}
+
+                                        <span
+                                            class="badge bg-danger">
+
+                                            Rejected
+
+                                        </span>
+
+                                    {% else %}
+
+                                        <span
+                                            class="badge bg-warning text-dark">
+
+                                            {{ app.status }}
+
+                                        </span>
+
+                                    {% endif %}
+
+                                </td>
+
+
+                                <td>
+
+                                    {% if app.applied_at %}
+
+                                        {{ app.applied_at.strftime('%d-%m-%Y') }}
+
+                                    {% else %}
+
+                                        -
+
+                                    {% endif %}
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+
+                        {% else %}
+
+                            <tr>
+
+                                <td
+                                    colspan="4"
+                                    class="text-center text-muted">
+
+                                    <i class="fa-solid fa-folder-open"></i>
+
+                                    No Applications Yet
+
+                                </td>
+
+                            </tr>
+
+                        {% endif %}
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

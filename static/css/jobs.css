@@ -1,0 +1,51 @@
+body{
+    background:#f4f7fb;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.job-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    height:100%;
+}
+
+.job-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
+
+.company-icon{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0d6efd,#00c6ff);
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
+
+.company-name{
+    color:#6c757d;
+    font-size:18px;
+    font-weight:600;
+}
+
+.badge{
+    padding:8px 12px;
+    font-size:13px;
+}
+
+.btn{
+    border-radius:10px;
+}
+
+.navbar-brand{
+    font-size:22px;
+}
