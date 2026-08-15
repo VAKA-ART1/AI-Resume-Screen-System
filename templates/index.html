@@ -1,268 +1,1783 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI Resume Screening & ATS</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- Navbar -->
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+<header class="main-navbar">
 
-<div class="container">
+    <div class="nav-container">
 
-<a class="navbar-brand fw-bold text-success" href="#">
-AI Resume Screening & ATS
-</a>
+        <a href="#home" class="brand">
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
+            <div class="brand-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
 
-<div class="collapse navbar-collapse" id="menu">
+            <div class="brand-text">
+                <strong>AI Resume</strong>
+                <span>Screening & ATS</span>
+            </div>
 
-<ul class="navbar-nav ms-auto">
+        </a>
 
-<li class="nav-item">
-<a class="nav-link" href="/">Home</a>
-</li>
+        <nav class="nav-links">
 
-<li class="nav-item">
-<a class="nav-link" href="/jobs">Jobs</a>
-</li>
+            <a href="#home" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
 
-<li class="nav-item">
-<a class="nav-link" href="#">Companies</a>
-</li>
+            <a href="/jobs" class="nav-link">
+                <i class="fa-solid fa-briefcase"></i>
+                Jobs
+            </a>
 
-<li class="nav-item">
-<a class="nav-link" href="#">About</a>
-</li>
+            <a href="#companies" class="nav-link">
+                <i class="fa-solid fa-building"></i>
+                Companies
+            </a>
 
-<li class="nav-item">
-<a class="btn btn-success ms-3" href="/login">Login</a>
-</li>
+            <a href="#about" class="nav-link">
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </a>
 
-<li class="nav-item">
-<a class="btn btn-warning ms-2" href="/register">Register</a>
-</li>
+            <a href="/login" class="login-btn">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
 
-</ul>
+            <a href="/register" class="register-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
 
-</div>
+        </nav>
 
-</div>
+    </div>
 
-</nav>
+</header>
 
-<!-- Hero -->
 
-<section class="hero">
+<!-- =========================================================
+     HOME / HERO
+========================================================= -->
 
-<div class="container">
+<section class="hero-section" id="home">
 
-<div class="row align-items-center">
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-orb orb-three"></div>
 
-<div class="col-lg-6">
+    <div class="hero-container">
 
-<h1>
-Find Your Dream Job with AI
-</h1>
+        <!-- LEFT -->
 
-<p>
+        <div class="hero-content">
 
-Upload your resume and let Artificial Intelligence
-find the perfect job for you.
+            <div class="platform-badge">
 
-</p>
+                <span class="live-dot"></span>
 
-<a href="/register" class="btn btn-success btn-lg">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
 
-Get Started
+                AI-Powered Recruitment Platform
 
-</a>
+            </div>
 
-<a href="/jobs" class="btn btn-outline-dark btn-lg ms-2">
+            <h1>
 
-Browse Jobs
+                Find the
+                <span class="gradient-text">Right</span>
 
-</a>
+                <br>
 
-</div>
+                <span class="blue-gradient-text">Talent</span>
 
-<div class="col-lg-6 text-center">
+                <br>
 
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900"
-class="img-fluid hero-image">
+                Faster with AI
 
-</div>
+            </h1>
 
-</div>
+            <p class="hero-description">
 
-</div>
+                Upload resumes, analyze candidates, calculate ATS scores
+                and discover the best job opportunities using intelligent
+                AI-powered recruitment technology.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/register" class="primary-btn">
+
+                    <i class="fa-solid fa-rocket"></i>
+
+                    Get Started
+
+                </a>
+
+                <a href="/jobs" class="secondary-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Browse Jobs
+
+                </a>
+
+            </div>
+
+            <div class="hero-features">
+
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    AI Resume Analysis
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    ATS Score
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Smart Job Matching
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT AI ANIMATION -->
+
+        <div class="ai-animation-area">
+
+            <!-- FLOATING CANDIDATE -->
+
+            <div class="resume-card resume-one">
+
+                <div class="resume-top">
+
+                    <div class="candidate-avatar">
+                        <span id="candidateInitials">PS</span>
+                    </div>
+
+                    <div>
+
+                        <strong id="resumeName">
+                            Priya Sharma
+                        </strong>
+
+                        <small id="resumeRole">
+                            Machine Learning Engineer
+                        </small>
+
+                    </div>
+
+                    <span class="resume-status">
+                        NEW
+                    </span>
+
+                </div>
+
+                <div class="resume-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span class="short"></span>
+
+                </div>
+
+                <div class="skills">
+
+                    <span>Python</span>
+                    <span>AI/ML</span>
+                    <span>SQL</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAIN RESUME -->
+
+            <div class="main-resume">
+
+                <div class="resume-header">
+
+                    <div class="document-icon">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Candidate Resume
+                        </strong>
+
+                        <small id="scanCandidate">
+                            AI Screening in progress
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="resume-profile">
+
+                    <div class="big-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="profile-lines">
+
+                        <span class="large"></span>
+                        <span></span>
+                        <span class="small"></span>
+
+                    </div>
+
+                </div>
+
+                <!-- SCANNING LIGHT -->
+
+                <div class="ai-scan-line"></div>
+
+                <div class="resume-content-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="medium"></span>
+                    <span class="short"></span>
+
+                </div>
+
+                <div class="resume-tags">
+
+                    <span>
+                        <i class="fa-solid fa-code"></i>
+                        Python
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-brain"></i>
+                        AI/ML
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-database"></i>
+                        SQL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ATS SCORE -->
+
+            <div class="ats-card">
+
+                <div class="ats-header">
+
+                    <span>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        ATS Analysis
+
+                    </span>
+
+                    <b>
+
+                        <span class="live-dot"></span>
+
+                        LIVE
+
+                    </b>
+
+                </div>
+
+                <div class="ats-body">
+
+                    <div class="score-circle">
+
+                        <span id="atsScore">
+                            95%
+                        </span>
+
+                    </div>
+
+                    <div class="match-info">
+
+                        <strong>
+                            Resume Match
+                        </strong>
+
+                        <span id="matchText">
+                            Excellent Match
+                        </span>
+
+                        <div class="score-bar">
+
+                            <div id="scoreProgress"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI PROCESSING -->
+
+            <div class="processing-card">
+
+                <div class="processing-icon">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        AI Screening
+                    </strong>
+
+                    <span id="processingText">
+                        Reading resume...
+                    </span>
+
+                </div>
+
+                <div class="processing-loader"></div>
+
+            </div>
+
+
+            <!-- SELECTED -->
+
+            <div class="selected-card">
+
+                <div class="success-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Candidate Selected
+                    </strong>
+
+                    <span id="selectedCandidate">
+                        Recruiter approved
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECRUITER CONNECTION -->
+
+            <div class="handshake-card">
+
+                <div class="person">
+
+                    <div class="person-icon">
+
+                        <i class="fa-solid fa-user-tie"></i>
+
+                    </div>
+
+                    <span>
+                        Recruiter
+                    </span>
+
+                </div>
+
+                <div class="handshake-animation">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                </div>
+
+                <div class="person">
+
+                    <div class="person-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <span>
+                        Candidate
+                    </span>
+
+                </div>
+
+                <div class="selected-text">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    You're Selected!
+
+                </div>
+
+            </div>
+
+
+            <!-- FLOATING ICONS -->
+
+            <div class="floating-icon icon-ai">
+
+                <i class="fa-solid fa-microchip"></i>
+
+            </div>
+
+            <div class="floating-icon icon-job">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+            </div>
+
+            <div class="floating-icon icon-check">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <div class="floating-icon icon-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- Statistics -->
 
-<section class="stats">
+<!-- =========================================================
+     LIVE PLATFORM
+========================================================= -->
 
-<div class="container">
+<section class="live-platform">
 
-<div class="row text-center">
+    <div class="section-heading">
 
-<div class="col-md-3">
+        <span class="mini-badge">
 
-<h2>50K+</h2>
+            <span class="live-dot"></span>
 
-<p>Candidates</p>
+            LIVE PLATFORM ACTIVITY
 
-</div>
+        </span>
 
-<div class="col-md-3">
+        <h2>
 
-<h2>5000+</h2>
+            Recruitment Happens
+            <span>In Real Time</span>
 
-<p>Companies</p>
+        </h2>
 
-</div>
+        <p>
 
-<div class="col-md-3">
+            Candidates, recruiters and administrators work together
+            through one intelligent recruitment platform.
 
-<h2>20K+</h2>
+        </p>
 
-<p>Jobs</p>
+    </div>
 
-</div>
 
-<div class="col-md-3">
+    <div class="activity-container">
 
-<h2>95%</h2>
+        <div class="role-card candidate-role">
 
-<p>Success Rate</p>
+            <div class="role-icon">
 
-</div>
+                <i class="fa-solid fa-user"></i>
 
-</div>
+            </div>
 
-</div>
+            <div>
+
+                <h3>Candidate</h3>
+
+                <p>
+                    Upload Resume
+                </p>
+
+            </div>
+
+            <span class="activity-status">
+                ACTIVE
+            </span>
+
+        </div>
+
+
+        <div class="activity-arrow">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </div>
+
+
+        <div class="role-card ai-role">
+
+            <div class="role-icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <div>
+
+                <h3>AI Engine</h3>
+
+                <p>
+                    Analyze ATS Score
+                </p>
+
+            </div>
+
+            <span class="activity-status">
+                SCANNING
+            </span>
+
+        </div>
+
+
+        <div class="activity-arrow">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </div>
+
+
+        <div class="role-card recruiter-role">
+
+            <div class="role-icon">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div>
+
+                <h3>Recruiter</h3>
+
+                <p>
+                    Review Candidate
+                </p>
+
+            </div>
+
+            <span class="activity-status">
+                ONLINE
+            </span>
+
+        </div>
+
+
+        <div class="activity-arrow">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </div>
+
+
+        <div class="role-card admin-role">
+
+            <div class="role-icon">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <div>
+
+                <h3>Admin</h3>
+
+                <p>
+                    Manage Platform
+                </p>
+
+            </div>
+
+            <span class="activity-status">
+                ACTIVE
+            </span>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- Featured Jobs -->
 
-<section class="container mt-5">
+<!-- =========================================================
+     JOBS
+========================================================= -->
 
-<h2 class="mb-4 text-center">
+<section class="jobs-section" id="jobs">
 
-Featured Jobs
+    <div class="section-heading">
 
-</h2>
+        <span class="mini-badge">
 
-<div class="row">
+            <i class="fa-solid fa-bolt"></i>
 
-<div class="col-md-4">
+            LIVE JOB MATCHING
 
-<div class="card shadow">
+        </span>
 
-<div class="card-body">
+        <h2>
+            Latest Opportunities
+        </h2>
 
-<h4>Software Engineer</h4>
+        <p>
+            AI continuously matches candidates with relevant job openings.
+        </p>
 
-<p>Google</p>
+    </div>
 
-<p>Hyderabad</p>
 
-<p>₹15-20 LPA</p>
+    <div class="jobs-slider">
 
-<button class="btn btn-success">
+        <div class="jobs-track">
 
-Apply Now
 
-</button>
+            <!-- JOB 1 -->
 
-</div>
+            <div class="job-card">
 
-</div>
+                <div class="company-logo google">
+                    G
+                </div>
 
-</div>
+                <div class="job-info">
 
-<div class="col-md-4">
+                    <h3>
+                        Software Engineer
+                    </h3>
 
-<div class="card shadow">
+                    <p>
+                        Google
+                    </p>
 
-<div class="card-body">
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Hyderabad
+                    </span>
 
-<h4>Data Analyst</h4>
+                </div>
 
-<p>Microsoft</p>
+                <strong>
+                    ₹15–20 LPA
+                </strong>
 
-<p>Bangalore</p>
+            </div>
 
-<p>₹12-18 LPA</p>
 
-<button class="btn btn-success">
+            <!-- JOB 2 -->
 
-Apply Now
+            <div class="job-card">
 
-</button>
+                <div class="company-logo microsoft">
+                    M
+                </div>
 
-</div>
+                <div class="job-info">
 
-</div>
+                    <h3>
+                        Data Analyst
+                    </h3>
 
-</div>
+                    <p>
+                        Microsoft
+                    </p>
 
-<div class="col-md-4">
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bangalore
+                    </span>
 
-<div class="card shadow">
+                </div>
 
-<div class="card-body">
+                <strong>
+                    ₹12–18 LPA
+                </strong>
 
-<h4>Python Developer</h4>
+            </div>
 
-<p>Infosys</p>
 
-<p>Pune</p>
+            <!-- JOB 3 -->
 
-<p>₹8-12 LPA</p>
+            <div class="job-card">
 
-<button class="btn btn-success">
+                <div class="company-logo amazon">
+                    A
+                </div>
 
-Apply Now
+                <div class="job-info">
 
-</button>
+                    <h3>
+                        Python Developer
+                    </h3>
 
-</div>
+                    <p>
+                        Amazon
+                    </p>
 
-</div>
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Chennai
+                    </span>
 
-</div>
+                </div>
 
-</div>
+                <strong>
+                    ₹10–16 LPA
+                </strong>
+
+            </div>
+
+
+            <!-- JOB 4 -->
+
+            <div class="job-card">
+
+                <div class="company-logo infosys">
+                    I
+                </div>
+
+                <div class="job-info">
+
+                    <h3>
+                        AI Engineer
+                    </h3>
+
+                    <p>
+                        Infosys
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Pune
+                    </span>
+
+                </div>
+
+                <strong>
+                    ₹8–14 LPA
+                </strong>
+
+            </div>
+
+
+            <!-- JOB 5 -->
+
+            <div class="job-card">
+
+                <div class="company-logo tcs">
+                    T
+                </div>
+
+                <div class="job-info">
+
+                    <h3>
+                        Machine Learning Engineer
+                    </h3>
+
+                    <p>
+                        TCS
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Hyderabad
+                    </span>
+
+                </div>
+
+                <strong>
+                    ₹9–15 LPA
+                </strong>
+
+            </div>
+
+
+            <!-- DUPLICATES -->
+
+            <div class="job-card">
+
+                <div class="company-logo google">
+                    G
+                </div>
+
+                <div class="job-info">
+
+                    <h3>
+                        Software Engineer
+                    </h3>
+
+                    <p>
+                        Google
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Hyderabad
+                    </span>
+
+                </div>
+
+                <strong>
+                    ₹15–20 LPA
+                </strong>
+
+            </div>
+
+
+            <div class="job-card">
+
+                <div class="company-logo microsoft">
+                    M
+                </div>
+
+                <div class="job-info">
+
+                    <h3>
+                        Data Analyst
+                    </h3>
+
+                    <p>
+                        Microsoft
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bangalore
+                    </span>
+
+                </div>
+
+                <strong>
+                    ₹12–18 LPA
+                </strong>
+
+            </div>
+
+
+            <div class="job-card">
+
+                <div class="company-logo amazon">
+                    A
+                </div>
+
+                <div class="job-info">
+
+                    <h3>
+                        Python Developer
+                    </h3>
+
+                    <p>
+                        Amazon
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Chennai
+                    </span>
+
+                </div>
+
+                <strong>
+                    ₹10–16 LPA
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<footer class="bg-dark text-white text-center p-4 mt-5">
 
-© 2026 AI Resume Screening & ATS
+<!-- =========================================================
+     COMPANIES
+========================================================= -->
+
+<section class="companies-section" id="companies">
+
+    <div class="section-heading">
+
+        <span class="mini-badge">
+
+            <i class="fa-solid fa-building"></i>
+
+            TRUSTED COMPANIES
+
+        </span>
+
+        <h2>
+            Companies Hiring
+            <span>With AI</span>
+        </h2>
+
+        <p>
+            Discover opportunities from leading organizations
+            looking for skilled technology professionals.
+        </p>
+
+    </div>
+
+
+    <div class="companies-grid">
+
+
+        <div class="company-card">
+
+            <div class="company-big-logo google">
+                G
+            </div>
+
+            <h3>Google</h3>
+
+            <p>
+                Software • AI • Cloud
+            </p>
+
+            <span>
+                120+ Open Positions
+            </span>
+
+        </div>
+
+
+        <div class="company-card">
+
+            <div class="company-big-logo microsoft">
+                M
+            </div>
+
+            <h3>Microsoft</h3>
+
+            <p>
+                Software • Data • Cloud
+            </p>
+
+            <span>
+                95+ Open Positions
+            </span>
+
+        </div>
+
+
+        <div class="company-card">
+
+            <div class="company-big-logo amazon">
+                A
+            </div>
+
+            <h3>Amazon</h3>
+
+            <p>
+                AWS • AI • Development
+            </p>
+
+            <span>
+                150+ Open Positions
+            </span>
+
+        </div>
+
+
+        <div class="company-card">
+
+            <div class="company-big-logo infosys">
+                I
+            </div>
+
+            <h3>Infosys</h3>
+
+            <p>
+                IT • AI • Consulting
+            </p>
+
+            <span>
+                200+ Open Positions
+            </span>
+
+        </div>
+
+
+        <div class="company-card">
+
+            <div class="company-big-logo tcs">
+                T
+            </div>
+
+            <h3>TCS</h3>
+
+            <p>
+                IT • Cloud • Engineering
+            </p>
+
+            <span>
+                250+ Open Positions
+            </span>
+
+        </div>
+
+
+        <div class="company-card">
+
+            <div class="company-big-logo accent-logo">
+                W
+            </div>
+
+            <h3>Wipro</h3>
+
+            <p>
+                Technology • Analytics
+            </p>
+
+            <span>
+                100+ Open Positions
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-container">
+
+
+        <div class="about-content">
+
+            <span class="mini-badge">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                ABOUT PLATFORM
+
+            </span>
+
+            <h2>
+
+                Recruitment Made
+                <span>Intelligent</span>
+
+            </h2>
+
+            <p>
+
+                AI Resume Screening & ATS is designed to connect
+                candidates, recruiters and administrators through
+                one intelligent recruitment platform.
+
+            </p>
+
+            <p>
+
+                Candidates can upload resumes, recruiters can discover
+                qualified talent and administrators can manage the
+                recruitment ecosystem efficiently.
+
+            </p>
+
+
+            <div class="about-features">
+
+                <div>
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                    <div>
+
+                        <strong>
+                            Smart Resume Screening
+                        </strong>
+
+                        <span>
+                            AI analyzes resume information quickly.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                    <div>
+
+                        <strong>
+                            ATS Scoring
+                        </strong>
+
+                        <span>
+                            Candidates receive intelligent match scores.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-link"></i>
+
+                    <div>
+
+                        <strong>
+                            Smart Job Matching
+                        </strong>
+
+                        <span>
+                            Connect skills with suitable jobs.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-visual">
+
+            <div class="about-glow"></div>
+
+            <div class="about-dashboard">
+
+                <div class="dashboard-top">
+
+                    <span>
+                        AI Recruitment Dashboard
+                    </span>
+
+                    <span class="dashboard-live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-score">
+
+                    <div class="dashboard-circle">
+
+                        <strong>
+                            95%
+                        </strong>
+
+                        <span>
+                            ATS Match
+                        </span>
+
+                    </div>
+
+                    <div class="dashboard-details">
+
+                        <div>
+                            <span>Resumes</span>
+                            <strong>50K+</strong>
+                        </div>
+
+                        <div>
+                            <span>Matches</span>
+                            <strong>20K+</strong>
+                        </div>
+
+                        <div>
+                            <span>Selected</span>
+                            <strong>12K+</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-line">
+
+                    <span style="width: 90%"></span>
+
+                </div>
+
+                <div class="dashboard-line">
+
+                    <span style="width: 75%"></span>
+
+                </div>
+
+                <div class="dashboard-line">
+
+                    <span style="width: 60%"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATISTICS
+========================================================= -->
+
+<section class="stats-section">
+
+    <div class="stat-box">
+
+        <i class="fa-solid fa-file-lines"></i>
+
+        <strong>50K+</strong>
+
+        <span>
+            Resumes Screened
+        </span>
+
+    </div>
+
+
+    <div class="stat-box">
+
+        <i class="fa-solid fa-building"></i>
+
+        <strong>5K+</strong>
+
+        <span>
+            Companies
+        </span>
+
+    </div>
+
+
+    <div class="stat-box">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        <strong>20K+</strong>
+
+        <span>
+            Jobs Available
+        </span>
+
+    </div>
+
+
+    <div class="stat-box">
+
+        <i class="fa-solid fa-user-check"></i>
+
+        <strong>95%</strong>
+
+        <span>
+            Match Accuracy
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div>
+
+        <strong>
+            AI Resume Screening & ATS
+        </strong>
+
+        <p>
+            Intelligent recruitment powered by AI.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="/jobs">
+            Jobs
+        </a>
+
+        <a href="#companies">
+            Companies
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <span>
+            © 2026 AI Resume Screening & ATS
+        </span>
+
+    </div>
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       CANDIDATES
+    ===================================================== */
+
+    const candidates = [
+
+        {
+            name: "Priya Sharma",
+            role: "Machine Learning Engineer",
+            score: 95,
+            initials: "PS"
+        },
+
+        {
+            name: "Rahul Kumar",
+            role: "Python Developer",
+            score: 91,
+            initials: "RK"
+        },
+
+        {
+            name: "Ananya Reddy",
+            role: "Data Scientist",
+            score: 97,
+            initials: "AR"
+        },
+
+        {
+            name: "Arjun Verma",
+            role: "AI Engineer",
+            score: 89,
+            initials: "AV"
+        },
+
+        {
+            name: "Sneha Patel",
+            role: "Full Stack Developer",
+            score: 94,
+            initials: "SP"
+        }
+
+    ];
+
+
+    let candidateIndex = 0;
+
+
+    const resumeName =
+        document.getElementById("resumeName");
+
+    const resumeRole =
+        document.getElementById("resumeRole");
+
+    const candidateInitials =
+        document.getElementById("candidateInitials");
+
+    const atsScore =
+        document.getElementById("atsScore");
+
+    const scoreProgress =
+        document.getElementById("scoreProgress");
+
+    const scanCandidate =
+        document.getElementById("scanCandidate");
+
+    const processingText =
+        document.getElementById("processingText");
+
+    const matchText =
+        document.getElementById("matchText");
+
+    const selectedCandidate =
+        document.getElementById("selectedCandidate");
+
+
+    function updateCandidate() {
+
+        const candidate =
+            candidates[candidateIndex];
+
+
+        resumeName.style.opacity = "0";
+        resumeRole.style.opacity = "0";
+
+
+        setTimeout(function () {
+
+            resumeName.textContent =
+                candidate.name;
+
+            resumeRole.textContent =
+                candidate.role;
+
+            candidateInitials.textContent =
+                candidate.initials;
+
+            atsScore.textContent =
+                candidate.score + "%";
+
+            scoreProgress.style.width =
+                candidate.score + "%";
+
+
+            resumeName.style.opacity = "1";
+            resumeRole.style.opacity = "1";
+
+
+            scanCandidate.textContent =
+                "AI analyzing " + candidate.name;
+
+
+            selectedCandidate.textContent =
+                candidate.name + " approved";
+
+
+            if (candidate.score >= 95) {
+
+                matchText.textContent =
+                    "Excellent Match";
+
+            }
+
+            else if (candidate.score >= 90) {
+
+                matchText.textContent =
+                    "Strong Match";
+
+            }
+
+            else {
+
+                matchText.textContent =
+                    "Good Match";
+
+            }
+
+        }, 350);
+
+
+        candidateIndex++;
+
+        if (candidateIndex >= candidates.length) {
+
+            candidateIndex = 0;
+
+        }
+
+    }
+
+
+    updateCandidate();
+
+    setInterval(updateCandidate, 3500);
+
+
+    /* =====================================================
+       AI PROCESSING STEPS
+    ===================================================== */
+
+    const processingSteps = [
+
+        "Reading resume...",
+        "Extracting skills...",
+        "Checking experience...",
+        "Analyzing education...",
+        "Matching job requirements...",
+        "Calculating ATS score...",
+        "Recruiter review...",
+        "Candidate selected!"
+
+    ];
+
+
+    let processingIndex = 0;
+
+
+    setInterval(function () {
+
+        processingText.textContent =
+            processingSteps[processingIndex];
+
+
+        processingIndex++;
+
+        if (processingIndex >= processingSteps.length) {
+
+            processingIndex = 0;
+
+        }
+
+    }, 1500);
+
+
+    /* =====================================================
+       NAVBAR SCROLL EFFECT
+    ===================================================== */
+
+    const navbar =
+        document.querySelector(".main-navbar");
+
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 40) {
+
+            navbar.classList.add("navbar-scrolled");
+
+        }
+
+        else {
+
+            navbar.classList.remove("navbar-scrolled");
+
+        }
+
+    });
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ===================================================== */
+
+    const navLinks =
+        document.querySelectorAll(".nav-link");
+
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+
+    window.addEventListener("scroll", function () {
+
+        let current = "home";
+
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 130;
+
+            const sectionHeight =
+                section.offsetHeight;
+
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+
+                current =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (href === "#" + current) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       MOUSE PARALLAX
+    ===================================================== */
+
+    const animationArea =
+        document.querySelector(".ai-animation-area");
+
+
+    if (animationArea) {
+
+        animationArea.addEventListener(
+            "mousemove",
+            function (event) {
+
+                const rect =
+                    animationArea.getBoundingClientRect();
+
+
+                const x =
+                    (event.clientX - rect.left)
+                    / rect.width - 0.5;
+
+
+                const y =
+                    (event.clientY - rect.top)
+                    / rect.height - 0.5;
+
+
+                animationArea.style.transform =
+                    `perspective(1000px)
+                     rotateY(${x * 4}deg)
+                     rotateX(${-y * 4}deg)`;
+
+            }
+        );
+
+
+        animationArea.addEventListener(
+            "mouseleave",
+            function () {
+
+                animationArea.style.transform =
+                    "perspective(1000px) rotateY(0deg) rotateX(0deg)";
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SMOOTH NAVIGATION
+    ===================================================== */
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+
+                if (targetId === "#") {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(targetId);
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+});
+
+</script>
 
 </body>
-
 </html>
+```
