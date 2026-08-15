@@ -787,12 +787,4 @@ B.Tech — Computer Science and Engineering
 * Artificial Intelligence
 * Machine Learning
 * Data Analytics
-* Web Development
-
----
-
-## ⭐ If you find this project useful
-
-Feel free to explore the repository, improve the project, and contribute new ideas.
-
-**Built with Python, Flask, AI concepts, and modern web technologies. 🚀**
+* Web Development.
